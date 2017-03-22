@@ -1,0 +1,8 @@
+{
+  "name": "mb_project",
+  "version": "0.0.1",
+  "dependencies": {
+    "jwt-simple": "^0.5.1",
+    "restify": "^4.3.0"
+  }
+}
