@@ -80,6 +80,6 @@ server.post('/auth/', auth);
 //This endpoint is secured via the jwt token
 server.get('/hey/', ensureAuthenticated, hey);
 
-server.listen(3000, function() {
+server.listen(3002, function() {
     console.log('%s listening', server.name);
 });
