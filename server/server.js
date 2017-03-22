@@ -17,6 +17,12 @@ will only be read once and cached, and this is also synchronous, but for this si
  */
 var users = require('./lib/data/users.json');
 
+//Enable CORS plugin
+restify.CORS.ALLOW_HEADERS.push('authorization');
+server.use(restify.CORS({
+    origins: [ 'http://localhost:3000' ],
+    credentials: true
+}));
 server.use(restify.bodyParser());
 
 function auth(req, res, next) {
@@ -45,10 +51,12 @@ function authenticate (username, password) {
         if (users[i].username === username && users[i].password === password) {
             var user = {
                 "name": users[i].name,
-                "usernam;e": users[i].username
+                "username": users[i].username
             };
 
-            return jwt.encode({ sub: user }, KEY, 'HS256');
+            user.token = jwt.encode({ sub: user }, KEY, 'HS256');
+
+            return user;
         }
     }
 
