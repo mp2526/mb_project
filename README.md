@@ -1,5 +1,9 @@
 # Installation #
 
+```
+git clone https://github.com/mp2526/mb_project.git
+```
+
 ## Server ##
 
 ```
@@ -10,7 +14,7 @@ node server.js
 
 ## Client ##
 
-`
+```
 cd client
-
-`
+npm start
+```
