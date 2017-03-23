@@ -3,9 +3,9 @@
 ## Server ##
 
 `
-cd server /n
-npm install /n
-node server.js /n
+cd server \n
+npm install \n
+node server.js
 `
 
 ## Client ##
