@@ -35,7 +35,7 @@ function auth(req, res, next) {
         res.send(token);
         next();
     } else {
-        return next(new restify.UnauthorizedError());
+        return next(new restify.UnauthorizedError("Invalid username or password."));
     }
 
 }

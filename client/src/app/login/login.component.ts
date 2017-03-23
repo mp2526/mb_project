@@ -4,7 +4,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { AuthService } from '../_services/index';
+import { AlertService, AuthService } from '../_services/index';
 
 @Component({
   moduleId: module.id,
@@ -19,7 +19,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private alertService: AlertService) { }
 
   ngOnInit() {
     this.authService.logout();
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
+          this.alertService.error("Invalid username or password.");
           this.loading = false;
         });
   }
