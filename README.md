@@ -2,11 +2,11 @@
 
 ## Server ##
 
-`
-cd server \n
-npm install \n
+```
+cd server
+npm install
 node server.js
-`
+```
 
 ## Client ##
 
